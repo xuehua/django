@@ -25,7 +25,7 @@ SECRET_KEY = 'jc6-vt-4r&8ch2^5ky-i1&e7%ap#2mspo(3gy6$ewxn6xuc2x@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
