@@ -3,6 +3,11 @@ This repository holds different django projects.
 
 ****
 ## Heroku Deployment Steps
+1. Remember to change ALLOWED_HOSTS in settings.py  
+   Here we change the setting of ALLOWED_HOSTS
+   pages_project/pages_project/settings.py as follwing.  
+   ALLOWED_HOSTS = ['*'] 
+
 1. Copy Pipfile, Pipfile.lock, Procfile under the top directory to the
    corresponding projects and commit the changes.  
    For pages_project, we copy the files to the directory of pages_project.  
