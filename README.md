@@ -8,10 +8,13 @@ This repository holds different django projects.
    pages_project/pages_project/settings.py as follwing.  
    ALLOWED_HOSTS = ['*'] 
 
-1. Copy Pipfile, Pipfile.lock, Procfile under the top directory to the
-   corresponding projects and commit the changes.  
+2. Copy Pipfile, Pipfile.lock under the top directory to the corresponding  
+   projects and commit the changes.  
    For pages_project, we copy the files to the directory of pages_project.  
 
+3. Add Procfile in the corresponding project directory.  
+   For pages_project, we have Procfile as following.  
+   web: gunicorn pages_project.wsgi --log-file -
 2. Run "heroku login" to log in.  
 
 3. Run "heroku create".  
@@ -29,7 +32,7 @@ This repository holds different django projects.
    pages_project. 
 
 6. Configure heroku with DISABLE_COLLECTSTATIC=1  
-   Run "heroku config:set DISABLE_COLLECTSTATIC=1"
+   Run "heroku config:set DISABLE_COLLECTSTATIC=1 --remote heroku-pages"
 
 7. Push codes to Heroku.  
    Run "git subtree push --prefix pages_project heroku-pages master"
