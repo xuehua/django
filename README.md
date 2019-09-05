@@ -49,5 +49,8 @@ This repository holds different django projects.
    Run "heroku ps:scale web=1 --remote heroku-pages"
 
 11. Open the website corresponding to the app.  
-   Run "heroku open --remote heroku-pages"     
+   Run "heroku open --remote heroku-pages"   
+
+12. To stop the app, we can do the following.  
+   Run "heroku ps:scale web=0 --remote heroku-pages"
 ****
