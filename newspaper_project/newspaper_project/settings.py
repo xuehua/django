@@ -37,10 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #3rd Party
     'crispy_forms',
+    #Local
     'users.apps.UsersConfig',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',
+    "articles.apps.ArticlesConfig",
 ]
+
+TIME_ZONE='American/Los_Angeles'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
