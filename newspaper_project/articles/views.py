@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .models import Article
@@ -16,17 +16,23 @@ class ArticleDetailView(DetailView):
     template_name = 'article_detail.html'
     #login_url = 'login'
 
-class ArticleUpdateView(LoginRequiredMixin, UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article
     fields = ('title', 'body',)
     template_name = 'article_edit.html'
     login_url = 'login'
 
-class ArticleDeleteView(LoginRequiredMixin, DeleteView):
+    def test_func(self):
+        return self.get_object().author == self.request.user
+
+class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
     template_name = 'article_delete.html'
     success_url = reverse_lazy('article_list')
     login_url = 'login'
+    
+    def test_func(self):
+        return self.get_object().author == self.request.user
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
