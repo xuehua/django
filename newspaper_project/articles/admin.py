@@ -3,7 +3,8 @@ from django.contrib import admin
 from .models import Article, Comment
 # Register your models here.
 
-class CommentInline(admin.StackedInline):
+#class CommentInline(admin.StackedInline):
+class CommentInline(admin.TabularInline):
     model = Comment
     extra = 0
 
