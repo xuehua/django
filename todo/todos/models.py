@@ -6,4 +6,4 @@ class Todo(models.Model):
     body = models.TextField()
 
     def __str__(self):
-        self.title
+        return self.title
