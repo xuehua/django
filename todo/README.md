@@ -1,4 +1,4 @@
-# Install and Run React
+# Install and Run React as Frontend
 
 ## Install React on windows 
 1. Install nvm-windows. 
