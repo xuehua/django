@@ -7,7 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length = 50)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add = True) # only update at creation time
-    update_at = models.DateTimeField(auto_now = True) # always update to current time.
+    updated_at = models.DateTimeField(auto_now = True) # always update to current time.
 
     def __str__(self):
         return self.title
