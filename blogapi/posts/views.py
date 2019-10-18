@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from django.contrib.auth import get_user_model
+from rest_framework import viewsets
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 
@@ -29,10 +30,18 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+
+""" old way of using rest_framework.generics
 class UserList(generics.ListCreateAPIView):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
 
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+"""
+
+# New way of using viewsets
+class UserViewSet(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
