@@ -162,3 +162,5 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "Attention! "
 DEFAULT_FROM_EMAIL='admin@djangobookstore.com'
+
+ACCOUNT_EMAIL_VERIFICATION="mandatory"
