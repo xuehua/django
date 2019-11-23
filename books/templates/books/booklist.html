@@ -4,7 +4,7 @@
   {% for book in book_list %}
     <div>
         <h2> 
-            <a href="{% url 'book_detail' book.pk %}">{{book.title}}</a>
+            <a href="{{book.get_absolute_url}}">{{book.get_absolute_url}}</a>
         </h2>
     </div>
   {% endfor %}
