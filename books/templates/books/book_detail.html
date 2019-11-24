@@ -2,6 +2,9 @@
 {% block title %} {{object.title}} {% endblock title %}
 {% block content %}
     <div class="book-detail">
+        {% if object.cover %}
+            <img class="bookcover" src="{{object.cover.url}}" alt="{{book.title}}">
+        {% endif %}
         <h2>
             <a href="">{{object.title}}</a>
             <p>Author: {{object.author}}</p>
