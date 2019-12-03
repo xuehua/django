@@ -2,7 +2,7 @@ setup:
     addons:
         -plan: heroku-postgresql
 build:
-    cocker:
+    docker:
         web: Dockerfile
 release:
     image: web
