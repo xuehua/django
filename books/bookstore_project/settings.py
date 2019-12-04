@@ -27,7 +27,7 @@ if ENVIRONMENT == 'production':
     SECURE_CONTENT_TYPE_NOSNIFF=True
     SESSION_COOKIE_SECURE=True
     CSRF_COOKIE_SECURE=True
-    SECURE_PROXY_SSL_HEADER=('HTTP_XFORWARDED_PROTO', 'https')
+    SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
