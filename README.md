@@ -33,6 +33,9 @@ This repository holds different django projects.
    For example, we run "git remote rename heroku heroku-pages" for the
    pages_project. 
 
+NOTE: Step 6 and step 7 can be merged into one single step of below.
+   heroku git:remote --remote heroku-pages -a damp-crag-81324
+
 8. Optional: configure heroku with DISABLE_COLLECTSTATIC=1.  
    For pages_project, static files are not supported, we run this step.  
    Run "heroku config:set DISABLE_COLLECTSTATIC=1 --remote heroku-pages"  
